@@ -1,0 +1,53 @@
+    @GetMapping("/my-chatgpt")
+    public ResponseEntity<Object> renderResponseFromChatGpt() {
+        String prompt = "This is a test";
+        String model = "text-davinci-001";
+        String engine = "gpt-3.5-turbo";
+        int maxTokens = 10;
+        headers.set("Content-Type", "application/json");
+        headers.set("Authorization", "Bearer " + apiKey);
+        Map<String, Object> requestBody = new HashMap<>();
+
+        requestBody.put("prompt", prompt);
+        // requestBody.put("model", model);
+        requestBody.put("engine", engine);
+        requestBody.put("max_tokens", maxTokens);
+
+        HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(requestBody, headers);
+        ResponseEntity<Object> response = restTemplate.exchange(
+                "https://api.openai.com/v1/engines/davinci-codex/completions",
+                HttpMethod.POST,
+                requestEntity,
+                Object.class
+        );
+
+        Object responseBody = response.getBody();
+        return response;
+    }
+
+    @GetMapping("/my-chatgpt-davinci")
+    public ResponseEntity<Object> renderResponseFromChatGptOtherEngine() {
+        String prompt = "This is a test";
+        String model = "text-davinci-002";
+        String engine = "davinci-codex";
+        int maxTokens = 10;
+        headers.set("Content-Type", "application/json");
+        headers.set("Authorization", "Bearer " + apiKey);
+        Map<String, Object> requestBody = new HashMap<>();
+
+        requestBody.put("prompt", prompt);
+        // requestBody.put("model", model);
+        requestBody.put("engine", engine);
+        requestBody.put("max_tokens", maxTokens);
+
+        HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(requestBody, headers);
+        ResponseEntity<Object> response = restTemplate.exchange(
+                "https://api.openai.com/v1/engines/davinci/completions",
+                HttpMethod.POST,
+                requestEntity,
+                Object.class
+        );
+
+        Object responseBody = response.getBody();
+        return response;
+    }
