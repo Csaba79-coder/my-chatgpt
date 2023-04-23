@@ -10,3 +10,7 @@ http://localhost:8080/engines
 http://localhost:8080/my-chat-gpt-text
 
 http://localhost:8080/generate-image
+
+[ChatGPT](https://chat.openai.com/) or [CatGPT](https://www.cat-gpt.com/)
+
+The result is not the same :) LOL
