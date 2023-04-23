@@ -14,3 +14,9 @@ http://localhost:8080/generate-image
 [ChatGPT](https://chat.openai.com/) or [CatGPT](https://www.cat-gpt.com/)
 
 The result is not the same :) LOL
+
+![img.png](img.png)
+
+Ask anything from CatGPT as follows:
+
+![img_1.png](img_1.png)
