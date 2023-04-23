@@ -20,3 +20,7 @@ The result is not the same :) LOL
 Ask anything from CatGPT as follows:
 
 ![img_1.png](img_1.png)
+
+But also can answer as follows:
+
+![img_2.png](img_2.png)
